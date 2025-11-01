@@ -28,7 +28,9 @@
             <div class="flex">
               <img class="w-16" src="assets/Group.png" alt="" />
               <div>
-                <h1 class="text-2xl font-bold">$45000</h1>
+                <h1 class="text-2xl font-bold">
+                  $ <span id="main-balance">45000</span>
+                </h1>
                 <p class="border rounded p-1">Available Balance</p>
               </div>
             </div>
@@ -39,7 +41,7 @@
         </nav>
         <!-- Welcome Section -->
         <section class="mt-10 ml-4 mr-4">
-          <h1 class="text-3xl font-bold mb-3">🔥 Welcome to Payooo!</h1>
+          <h1 class="text-3xl font-bold mb-3">🔥 Welcome to PayGo!</h1>
           <p>
             Enjoy easy and convenient financial services with us. Cashout charge
             is low and
@@ -90,26 +92,30 @@
                       </select>
                     </fieldset>
                     <fieldset class="fieldset">
-                      <label class="font-semibold">Bank Account Number</label>
-                      <input
+                      <label  class="font-semibold">Bank Account Number</label>
+                      <input id="bank-account-number"
                         class="input rounded-full"
                         placeholder="Enter 11 digit account number"
+                        required
                       />
 
                       <label class="font-semibold">Amount to Add</label>
                       <input
+                        id="amount"
                         class="input rounded-full"
                         placeholder="Add amount to withdraw"
                       />
 
                       <label class="font-semibold">Pin Number</label>
                       <input
+                        id="pin"
                         type="pin "
                         class="input rounded-full"
                         placeholder="Enter pin number"
                       />
 
                       <button
+                        id="add-money-btn"
                         class="btn bg-blue-700 rounded-full text-white mt-4"
                       >
                         Add Money
@@ -123,5 +129,7 @@
         </section>
       </header>
     </section>
+
+    <script src="./script/addMoney.js"></script>
   </body>
 </html>
