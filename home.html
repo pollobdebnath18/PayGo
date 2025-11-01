@@ -11,6 +11,13 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-slate-800">
     <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
@@ -21,7 +28,7 @@
             <div class="flex">
               <img class="w-16" src="assets/Group.png" alt="" />
               <div>
-                <h1 class="text-3xl font-bold">$45000</h1>
+                <h1 class="text-2xl font-bold">$45000</h1>
                 <p class="border rounded p-1">Available Balance</p>
               </div>
             </div>
@@ -31,6 +38,89 @@
           </div>
         </nav>
         <!-- Welcome Section -->
+        <section class="mt-10 ml-4 mr-4">
+          <h1 class="text-3xl font-bold mb-3">🔥 Welcome to Payooo!</h1>
+          <p>
+            Enjoy easy and convenient financial services with us. Cashout charge
+            is low and
+          </p>
+          <div class="cards grid grid-cols-3 mt-10 gap-2">
+            <div class="box border p-3 rounded-sm cursor-pointer">
+              <img class="w-8 mx-auto" src="assets/wallet1.png" alt="" />
+              <h1 class="text-center pt-2">Add Money</h1>
+            </div>
+            <div class="box border p-3 rounded-sm cursor-pointer">
+              <img class="w-8 mx-auto" src="assets/send1.png" alt="" />
+              <h1 class="text-center pt-2">Cashout</h1>
+            </div>
+            <div class="box border p-3 rounded-sm cursor-pointer">
+              <img class="w-8 mx-auto" src="assets/money1.png" alt="" />
+              <h1 class="text-center pt-1 leading-tight">Transfer Money</h1>
+            </div>
+          </div>
+          <div class="cards grid grid-cols-3 mt-3 gap-2">
+            <div class="box border p-3 rounded-sm cursor-pointer">
+              <img class="w-8 mx-auto" src="assets/bonus1.png" alt="" />
+              <h1 class="text-center p-2">Get Bonus</h1>
+            </div>
+            <div class="box border p-3 rounded-sm cursor-pointer">
+              <img class="w-8 mx-auto" src="assets/purse1.png" alt="" />
+              <h1 class="text-center p-2">Pay Bill</h1>
+            </div>
+            <div class="box border p-3 rounded-sm cursor-pointer">
+              <img class="w-8 mx-auto" src="assets/transaction1.png" alt="" />
+              <h1 class="text-center p-1">Transactions</h1>
+            </div>
+          </div>
+          <section class="mt-4">
+            <h2 class="font-bold mb-3">Add Money</h2>
+            <!-- input form from daisy ui -->
+            <div class="">
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                  <div class="card-body">
+                    <fieldset class="fieldset">
+                      <legend class="font-semibold">Select A Bank</legend>
+                      <select class="select rounded-full">
+                        <option disabled selected>Select Bank</option>
+                        <option value="Baksh">Bkash</option>
+                        <option value="Nagad">Nagad</option>
+                        <option value="BBL">BBl</option>
+                        <option value="Rocket">Rocket</option>
+                      </select>
+                    </fieldset>
+                    <fieldset class="fieldset">
+                      <label class="font-semibold">Bank Account Number</label>
+                      <input
+                        class="input rounded-full"
+                        placeholder="Enter 11 digit account number"
+                      />
+
+                      <label class="font-semibold">Amount to Add</label>
+                      <input
+                        class="input rounded-full"
+                        placeholder="Add amount to withdraw"
+                      />
+
+                      <label class="font-semibold">Pin Number</label>
+                      <input
+                        type="pin "
+                        class="input rounded-full"
+                        placeholder="Enter pin number"
+                      />
+
+                      <button
+                        class="btn bg-blue-700 rounded-full text-white mt-4"
+                      >
+                        Add Money
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
       </header>
     </section>
   </body>
