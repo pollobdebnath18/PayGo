@@ -19,14 +19,20 @@ document
     ).value;
 
     // condition block
+
     if (bankAccountNumber.length == 11) {
-      if (convertedPin == 1234) {
-        const sum = convertedMainBalance + convertedAmount;
-        document.getElementById("main-balance").innerText = sum;
+      if (convertedAmount && convertedPin) {
+        if (convertedPin == 1234) {
+          const sum = convertedAmount + convertedMainBalance;
+          document.getElementById("main-balance").innerText = sum;
+        }
+        else{
+            alert('Please enter your correct pin ')
+        }
       } else {
-        alert("Your Pin is incorrect");
+        alert("Please Fill this field");
       }
     } else {
-      alert("Bank Account Number is incorrect");
+      alert("Please enter your correct account number");
     }
   });

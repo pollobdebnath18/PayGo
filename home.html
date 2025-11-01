@@ -47,11 +47,11 @@
             is low and
           </p>
           <div class="cards grid grid-cols-3 mt-10 gap-2">
-            <div class="box border p-3 rounded-sm cursor-pointer">
+            <div id="addmoney-card" class="box border p-3 rounded-sm cursor-pointer">
               <img class="w-8 mx-auto" src="assets/wallet1.png" alt="" />
               <h1 class="text-center pt-2">Add Money</h1>
             </div>
-            <div class="box border p-3 rounded-sm cursor-pointer">
+            <div id="cashout-card" class="box border p-3 rounded-sm cursor-pointer">
               <img class="w-8 mx-auto" src="assets/send1.png" alt="" />
               <h1 class="text-center pt-2">Cashout</h1>
             </div>
@@ -74,7 +74,8 @@
               <h1 class="text-center p-1">Transactions</h1>
             </div>
           </div>
-          <section class="mt-4">
+          <!-- Add Money Section -->
+          <section id="addmoney" class="mt-4">
             <h2 class="font-bold mb-3">Add Money</h2>
             <!-- input form from daisy ui -->
             <div class="">
@@ -95,8 +96,9 @@
                       <label  class="font-semibold">Bank Account Number</label>
                       <input id="bank-account-number"
                         class="input rounded-full"
-                        placeholder="Enter 11 digit account number"
+                        placeholder="Enter 11 digit number"
                         required
+                        type="number"
                       />
 
                       <label class="font-semibold">Amount to Add</label>
@@ -104,16 +106,16 @@
                         id="amount"
                         class="input rounded-full"
                         placeholder="Add amount to withdraw"
+                        type="number"
                       />
 
                       <label class="font-semibold">Pin Number</label>
                       <input
                         id="pin"
-                        type="pin "
+                        type="number"
                         class="input rounded-full"
                         placeholder="Enter pin number"
                       />
-
                       <button
                         id="add-money-btn"
                         class="btn bg-blue-700 rounded-full text-white mt-4"
@@ -126,10 +128,56 @@
               </div>
             </div>
           </section>
+          <!-- Cash out section -->
+          <section id="cashout" class="mt-4">
+            <h2 class="font-bold mb-3">Cash Out</h2>
+            <!-- input form from daisy ui -->
+            <div class="">
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                  <div class="card-body">
+                    <fieldset class="fieldset">
+                      <label  class="font-semibold">Agent Number</label>
+                      <input id="agent-number"
+                        class="input rounded-full"
+                        placeholder="Enter 11 digit  number"
+                        required
+                        type="number"
+                      />
+
+                      <label class="font-semibold">Amount</label>
+                      <input
+                        id="amount-cash"
+                        class="input rounded-full"
+                        placeholder="Add amount to withdraw"
+                        type="number"
+                      />
+
+                      <label class="font-semibold">Pin Number</label>
+                      <input
+                        id="pin-cash"
+                        type="number"
+                        class="input rounded-full"
+                        placeholder="Enter pin number"
+                      />
+                      <button
+                        id="cashout-btn"
+                        class="btn bg-blue-700 rounded-full text-white mt-4"
+                      >
+                        Withdraw Money
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </header>
     </section>
 
     <script src="./script/addMoney.js"></script>
+    <script src="./script/toggle.js"></script>
+    <script src="./script/cashOut.js"></script>
   </body>
 </html>
