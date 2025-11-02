@@ -1,36 +1,61 @@
+// document.getElementById('cashout-btn').addEventListener('click', function(event){
+//     //get amount 
+//     const cashAmount = document.getElementById('amount-cash').value ;
+//     const convertedCashAmount = parseFloat(cashAmount);
+    
+//     //get pin
+//     const pinCash = document.getElementById('pin-cash').value;
+//     const convertedCashPin = parseInt(pinCash);
+    
+//     //get agent number 
+//     const agent = document.getElementById('agent-number').value;
+
+//     //get main balance 
+//     const mainBalance = document.getElementById('main-balance').innerText;
+//     const convertedMainBalance = parseFloat(mainBalance);
+
+//     // condition check
+//     if(agent.length == 11){
+//         if(convertedCashAmount && convertedCashPin){
+//             if(convertedCashPin == 12345){
+//                 const sub = convertedMainBalance - convertedCashAmount;
+//                 document.getElementById('main-balance').innerText = sub;
+//             }
+//             else{
+//                 alert('Please enter your correct pin ')
+//             }
+//         }
+//         else{
+//             alert("Please Fill this field");
+//         }
+//     }
+//     else{
+//         alert('Please enter your correct agent number')
+//     }
+
+// })
+
 document.getElementById('cashout-btn').addEventListener('click', function(event){
-    //get amount 
-    const cashAmount = document.getElementById('amount-cash').value ;
-    const convertedCashAmount = parseFloat(cashAmount);
-    
-    //get pin
-    const pinCash = document.getElementById('pin-cash').value;
-    const convertedCashPin = parseInt(pinCash);
-    
-    //get agent number 
-    const agent = document.getElementById('agent-number').value;
+    //amount 
+    const amount = getInputById('amount-cash');
+    //pin
+    const pin = getInputById('pin-cash');
+    //agent
+    const agent =document.getElementById('agent-number').value;
+    //main balance 
+    const mainBalance = getInnerTextById('main-balance');
 
-    //get main balance 
-    const mainBalance = document.getElementById('main-balance').innerText;
-    const convertedMainBalance = parseFloat(mainBalance);
-
-    // condition check
+    //condition 
     if(agent.length == 11){
-        if(convertedCashAmount && convertedCashPin){
-            if(convertedCashPin == 12345){
-                const sub = convertedMainBalance - convertedCashAmount;
-                document.getElementById('main-balance').innerText = sub;
-            }
-            else{
-                alert('Please enter your correct pin ')
-            }
+        if(pin == 12345){
+            const sub = mainBalance - amount ;
+            setInnerTextByIdAndValue('main-balance', sub);
         }
         else{
-            alert("Please Fill this field");
+            alert('Please enter the correct pin number');
         }
     }
     else{
-        alert('Please enter your correct agent number')
+        alert('Please enter the correct agent number');
     }
-
 })
