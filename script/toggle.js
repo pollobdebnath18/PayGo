@@ -15,22 +15,34 @@
 //     document.getElementById("addmoney").style.display = "none";
 //   });
 
-
+//Default hide
+handleToggleDisplay("addmoney", "none");
+handleToggleDisplay("cashout", "none");
+handleToggleDisplay("transaction", "none");
 // Add money card
 document
   .getElementById("addmoney-card")
   .addEventListener("click", function (event) {
     handleToggleDisplay("addmoney", "block");
     handleToggleDisplay("cashout", "none");
+    handleToggleDisplay("transaction", "none");
   });
 
-  //Cash out card 
-  document.getElementById('cashout-card').addEventListener('click', function(event){
-    handleToggleDisplay('addmoney','none');
-    handleToggleDisplay('cashout','block');
-  })
+//Cash out card
+document
+  .getElementById("cashout-card")
+  .addEventListener("click", function (event) {
+    handleToggleDisplay("addmoney", "none");
+    handleToggleDisplay("cashout", "block");
+    handleToggleDisplay("transaction", "none");
+  });
 
-// show display
-function handleToggleDisplay(id, status) {
-  document.getElementById(id).style.display = status;
-}
+//transaction card
+document
+  .getElementById("transaction-card")
+  .addEventListener("click", function (event) {
+    console.log("hello world");
+    handleToggleDisplay("transaction", "block");
+    handleToggleDisplay("addmoney", "none");
+    handleToggleDisplay("cashout", "none");
+  });

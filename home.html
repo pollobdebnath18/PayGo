@@ -69,14 +69,14 @@
               <img class="w-8 mx-auto" src="assets/purse1.png" alt="" />
               <h1 class="text-center p-2">Pay Bill</h1>
             </div>
-            <div class="box border p-3 rounded-sm cursor-pointer">
+            <div id="transaction-card" class="box border p-3 rounded-sm cursor-pointer">
               <img class="w-8 mx-auto" src="assets/transaction1.png" alt="" />
               <h1 class="text-center p-1">Transactions</h1>
             </div>
           </div>
           <!-- Add Money Section -->
-          <section id="addmoney" class="mt-4">
-            <h2 class="font-bold mb-3">Add Money</h2>
+          <section id="addmoney" class="mt-8">
+            <h2 class="text-2xl font-bold mb-3 ">Add Money</h2>
             <!-- input form from daisy ui -->
             <div class="">
               <div class="hero-content flex-col lg:flex-row-reverse">
@@ -130,7 +130,7 @@
           </section>
           <!-- Cash out section -->
           <section id="cashout" class="mt-4">
-            <h2 class="font-bold mb-3">Cash Out</h2>
+            <h2 class="text-2xl font-bold mb-3">Cash Out</h2>
             <!-- input form from daisy ui -->
             <div class="">
               <div class="hero-content flex-col lg:flex-row-reverse">
@@ -172,6 +172,13 @@
               </div>
             </div>
           </section>
+
+          <!-- Transaction section -->
+          <section id="transaction" class="mt-4">
+            <h2 class="text-2xl font-bold mb-3">Transaction History</h2>
+            <div id="transaction-container">
+            </div>
+          </section>
         </section>
       </header>
     </section>
@@ -180,6 +187,7 @@
     <script src="./script/addMoney.js"></script>
     <script src="./script/toggle.js"></script>
     <script src="./script/cashOut.js"></script>
+    <script src="./script/transaction.js"></script>
     
   </body>
 </html>

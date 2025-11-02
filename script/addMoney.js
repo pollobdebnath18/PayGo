@@ -54,6 +54,14 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
     if(pin == 1234){
       const sum = mainBalance + amount ;
       setInnerTextByIdAndValue('main-balance',sum);
+
+      //for transaction section update
+      const container = document.getElementById('transaction-container');
+      const p = document.createElement('p');
+      p.innerText = ` 
+      Added ${amount} Taka from ${account} account 
+      `
+      container.appendChild(p);
     }
     else{
       alert('Please enter correct pin')
