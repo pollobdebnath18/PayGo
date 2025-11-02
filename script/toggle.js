@@ -41,7 +41,6 @@ document
 document
   .getElementById("transaction-card")
   .addEventListener("click", function (event) {
-    console.log("hello world");
     handleToggleDisplay("transaction", "block");
     handleToggleDisplay("addmoney", "none");
     handleToggleDisplay("cashout", "none");

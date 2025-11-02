@@ -1,16 +1,16 @@
 // document.getElementById('cashout-btn').addEventListener('click', function(event){
-//     //get amount 
+//     //get amount
 //     const cashAmount = document.getElementById('amount-cash').value ;
 //     const convertedCashAmount = parseFloat(cashAmount);
-    
+
 //     //get pin
 //     const pinCash = document.getElementById('pin-cash').value;
 //     const convertedCashPin = parseInt(pinCash);
-    
-//     //get agent number 
+
+//     //get agent number
 //     const agent = document.getElementById('agent-number').value;
 
-//     //get main balance 
+//     //get main balance
 //     const mainBalance = document.getElementById('main-balance').innerText;
 //     const convertedMainBalance = parseFloat(mainBalance);
 
@@ -35,27 +35,39 @@
 
 // })
 
-document.getElementById('cashout-btn').addEventListener('click', function(event){
-    //amount 
-    const amount = getInputById('amount-cash');
+document
+  .getElementById("cashout-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    //amount
+    const amount = getInputById("amount-cash");
     //pin
-    const pin = getInputById('pin-cash');
+    const pin = getInputById("pin-cash");
     //agent
-    const agent =document.getElementById('agent-number').value;
-    //main balance 
-    const mainBalance = getInnerTextById('main-balance');
+    const agent = document.getElementById("agent-number").value;
+    //main balance
+    const mainBalance = getInnerTextById("main-balance");
 
-    //condition 
-    if(agent.length == 11){
-        if(pin == 12345){
-            const sub = mainBalance - amount ;
-            setInnerTextByIdAndValue('main-balance', sub);
-        }
-        else{
-            alert('Please enter the correct pin number');
-        }
+    //condition
+    if (agent.length == 11) {
+      if (pin == 12345) {
+        const sub = mainBalance - amount;
+        setInnerTextByIdAndValue("main-balance", sub);
+
+
+        //for transaction section update
+        const container = document.getElementById("transaction-container");
+        const p = document.createElement("p");
+        p.innerText = ` 
+      Cash-out ${amount} Taka from ${agent} account 
+      `;
+        container.appendChild(p);
+
+
+      } else {
+        alert("Please enter the correct pin number");
+      }
+    } else {
+      alert("Please enter the correct agent number");
     }
-    else{
-        alert('Please enter the correct agent number');
-    }
-})
+  });
