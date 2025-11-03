@@ -37,37 +37,50 @@
 //     }
 //   });
 
+document
+  .getElementById("add-money-btn")
+  .addEventListener("click", function (event) {
+    //get amount
+    const amount = getInputById("amount");
+    //get pin
+    const pin = getInputById("pin");
+    //main balance
+    const mainBalance = getInnerTextById("main-balance");
+    //get  account number
+    const account = document.getElementById("bank-account-number").value;
 
+    const selectBank = document.getElementById("allbank").value;
 
-document.getElementById('add-money-btn').addEventListener('click', function(event){
-  //get amount 
-  const amount = getInputById('amount');
-  //get pin 
-  const pin = getInputById('pin');
-  //main balance 
-  const mainBalance = getInnerTextById('main-balance');
-  //get  account number 
-  const account = document.getElementById('bank-account-number').value;
+    // condition
 
-  // condition
-  if(account.length == 11){
-    if(pin == 1234){
-      const sum = mainBalance + amount ;
-      setInnerTextByIdAndValue('main-balance',sum);
-
-      //for transaction section update
-      const container = document.getElementById('transaction-container');
-      const p = document.createElement('p');
-      p.innerText = ` 
-      Added ${amount} Taka from ${account} account 
-      `
-      container.appendChild(p);
+    if (amount <= 0) {
+      alert("Add Positive value");
+      return;
     }
-    else{
-      alert('Please enter correct pin')
+    if (account.length == 11) {
+      if (pin == 1234) {
+        const sum = mainBalance + amount;
+        setInnerTextByIdAndValue("main-balance", sum);
+        
+        //for transaction section update
+        const container = document.getElementById("transaction-container");
+        const div = document.createElement("div");
+        div.classList.add("bg-gray-700", "p-3", "rounded", "mb-3");
+
+        div.innerHTML = `
+  <h1 class="text-2xl text-white font-bold">Added Money from ${selectBank}</h1>
+  <h3 class="text-white">Amount: ${amount}</h3>
+  <p class="text-gray-200">Account Number: ${account}</p>
+  <p class="text-gray-200">Transaction ID: TXN-${Math.floor(
+    Math.random() * 1000000000
+  )}</p>
+`;
+
+        container.appendChild(div);
+      } else {
+        alert("Please enter correct pin");
+      }
+    } else {
+      alert("Please enter correct account number");
     }
-  }
-  else{
-    alert('Please enter correct account number');
-  }
-})
+  });
